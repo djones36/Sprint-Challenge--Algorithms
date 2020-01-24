@@ -105,14 +105,11 @@ class SortingRobot:
         # once it has moved right through list, at the end it will then move left through the list
         # repeat steps till the biggest has bubbled up. this is bubble sorting
 
-        self.set_light_on()
-        # starts at index 0, pick ups first item
+        self.set_light_on()  # starts at index 0, pick ups first item
         self.swap_item()
 
-        # runs when robot is on
-        while self.light_is_on():
-            # moves right and swaps items till it reaches the end
-            while self.can_move_right():
+        while self.light_is_on():        # runs when robot is on
+            while self.can_move_right():       # moves right and swaps items till it reaches the end
                 self.move_right()
                 if self.compare_item() == 1:
                     self.swap_item()
@@ -122,8 +119,7 @@ class SortingRobot:
             # moves left with the smallest number till it reaches the end.
             while self.can_move_left():
                 self.move_left()
-                # repeats the steps
-                if self.compare_item() == None:
+                if self.compare_item() == None:  # repeats the steps
                     self.swap_item()
                     self.move_right()
                     self.swap_item()
